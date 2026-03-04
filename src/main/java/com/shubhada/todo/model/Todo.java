@@ -1,5 +1,5 @@
 package com.shubhada.todo.model;
-
+import java.time.LocalDate;
 import jakarta.persistence.*;
 
 @Entity
@@ -10,9 +10,19 @@ public class Todo {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    public LocalDate getDueDate() {
+        return dueDate;
+    }
+
+    public void setDueDate(LocalDate dueDate) {
+        this.dueDate = dueDate;
+    }
+
     private String title;
 
     private boolean completed;
+
+    private LocalDate dueDate;
 
     public Todo() {
     }
